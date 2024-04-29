@@ -17,6 +17,28 @@ void Bullet::resetBullet(sf::Vector2f player_position, sf::Vector2i cursor_posit
     health_points = health_value;
 }
 
+int Bullet::getHealth()
+{
+    return health_points;
+}
+
+
+void Bullet::setHealth(int health_value)
+{
+    health_points = health_value;
+}
+
+sf::Vector2f Bullet::getPosition()
+{
+    return body.getPosition();
+}
+
+float Bullet::getRadius()
+{
+    return body.getRadius();
+}
+
+
 bool Bullet::isOutside()
 {
     if (body.getPosition().x > 650 || body.getPosition().x < -50 ||

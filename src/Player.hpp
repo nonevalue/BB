@@ -10,6 +10,8 @@ public:
     void update(sf::Vector2i mouse_position);
     void move(sf::Vector2f move_speed);
     sf::Vector2f getPosition();
+    void setPosition(sf::Vector2f position_value);
+    float getRadius();
     
     void draw(sf::RenderTarget* window);
 private:

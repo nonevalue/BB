@@ -33,6 +33,16 @@ sf::Vector2f Player::getPosition()
     return body.getPosition();
 }
 
+void Player::setPosition(sf::Vector2f position_value)
+{
+    body.setPosition(position_value);
+}
+
+float Player::getRadius()
+{
+    return body.getRadius();
+}
+
 void Player::draw(sf::RenderTarget* window)
 {
     window->draw(gun);

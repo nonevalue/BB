@@ -9,6 +9,7 @@
 
 #include "Player.hpp"
 #include "Bullet.hpp"
+#include "Enemy.hpp"
 
 
 template <typename T>
@@ -35,6 +36,9 @@ private:
     void updateMainMenu();
     void updateGameMenu();
     void updateGame();
+    void updateBullets();
+    void updateEnemies();
+    void loot();
 
     void draw();
 
@@ -48,19 +52,36 @@ private:
     //Font
     sf::Font font;
 
+    //<-------Player Variables------->
     //System
     bool left_mouse_click;
     bool up, down, left, right;
 
-    int shoot_timer, base_shoot_time;
+    float shoot_timer, base_shoot_time;
+    int reload_timer, base_reload_time;
 
     int ammo;
     int score;
-    int totalscore;
+    int total_score;
     int health;
     float move_speed;
+
+    //Upgrades
+    int upgrade;
+    int player_level;
+
+    int bullet_health;
+    float shoot_time_level;
+    int reload_time;
+    bool auto_heal;
+    bool auto_reload;
+    //<------------------------------>
     
+    //Enemy system variables
     int enemy_level;
+    int enemy_spawn_timer;
+    int enemy_spawn_time;
+    int enemy_level_counter;
 
     //Player
     Player player;
@@ -68,7 +89,11 @@ private:
     //Bullet
     Bullet bullet;
     std::vector<Bullet> bullets;
-    int bullet_health;
+
+    //Enemies
+
+    Enemy enemy;
+    std::vector<Enemy> enemies;
 
     //<-----Tables----->
 
@@ -92,4 +117,14 @@ private:
     Text health_text;
     Text total_score_text;
     Text enemy_level_text;
+
+    //Upgrade Menu
+    bool upgrade_menu_open;
+    Table upgrade_menu;
+    Text* bullet_power_text;
+    Text* bullet_rate_text;
+    Text* reload_speed_text;
+    Text* auto_health_text;
+    Text* auto_reload_text;
+    Text* next_upgrade_text;
 };

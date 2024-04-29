@@ -17,12 +17,22 @@ void Enemy::setColor(sf::Color color_value)
 
 void Enemy::setHealth(int health_value)
 {
-    health_points-= health_value;
+    health_points = health_value;
+}
+
+int Enemy::getHealth()
+{
+    return health_points;
 }
 
 sf::Vector2f Enemy::getPosition()
 {
     return body.getPosition();
+}
+
+float Enemy::getRadius()
+{
+    return body.getRadius();
 }
 
 void Enemy::update(sf::Vector2f player_position)

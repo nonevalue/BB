@@ -10,7 +10,9 @@ public:
     
     void setColor(sf::Color color_value);
     void setHealth(int health_value);
+    int getHealth();
     sf::Vector2f getPosition();
+    float getRadius();
 
     void update(sf::Vector2f player_position);
     void randomizePosition(sf::Vector2f player_position);
